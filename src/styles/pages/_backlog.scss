@@ -1,0 +1,66 @@
+@use '../abstracts' as *;
+
+.backlog {
+  &__head {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $space-md;
+
+    .page-title {
+      display: flex;
+      align-items: center;
+      gap: $space-md;
+      margin-bottom: $space-lg;
+    }
+  }
+
+  &__count {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: $radius-pill;
+    padding: 0.25rem 0.8rem;
+    white-space: nowrap;
+  }
+
+  &__empty {
+    @include flex-center;
+    flex-direction: column;
+    gap: $space-sm;
+    padding: $space-xxl 0;
+    text-align: center;
+    animation: fadeInUp 0.5s ease both;
+  }
+
+  &__empty-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--text-muted);
+    animation: pulse 1.6s ease infinite;
+  }
+
+  &__empty-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &__empty-hint {
+    color: var(--text-muted);
+    margin-bottom: $space-md;
+  }
+}
+
+.genre-chart {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: $radius-md;
+  padding: $space-lg;
+  margin-bottom: $space-xl;
+
+  &__title {
+    font-size: 1.15rem;
+    margin-bottom: $space-md;
+  }
+}

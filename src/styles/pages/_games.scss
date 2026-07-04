@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+.games {
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    margin-bottom: $space-lg;
+
+    @include respond-md {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+
+    .select {
+      flex: 1;
+
+      @include respond-md {
+        flex: none;
+      }
+    }
+  }
+
+  &__results-info {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: $space-md;
+  }
+
+  &__empty {
+    text-align: center;
+    color: var(--text-muted);
+    padding: $space-xxl 0;
+    font-size: 1.05rem;
+  }
+
+  &__more {
+    @include flex-center;
+    margin-top: $space-xl;
+  }
+}

@@ -1,0 +1,42 @@
+// ============================
+// Dark / Light themes via CSS custom properties.
+// The active theme is set as data-theme="..." on <html>
+// by ThemeContext.
+// ============================
+
+:root,
+[data-theme='dark'] {
+  --bg: #14120f;
+  --bg-elevated: #1c1a16;
+  --bg-card: #201d18;
+  --text: #f2ede4;
+  --text-muted: #9a9186;
+  --border: #332f28;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --overlay: rgba(10, 8, 6, 0.8);
+  --hero-block: linear-gradient(
+    100deg,
+    var(--bg) 0%,
+    var(--bg) 58%,
+    rgba(226, 97, 29, 0.14) 58%,
+    rgba(226, 97, 29, 0.14) 100%
+  );
+}
+
+[data-theme='light'] {
+  --bg: #f7f4ee;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --text: #1b1712;
+  --text-muted: #6b6357;
+  --border: #e6e0d3;
+  --shadow: rgba(40, 30, 10, 0.1);
+  --overlay: rgba(30, 20, 10, 0.55);
+  --hero-block: linear-gradient(
+    100deg,
+    var(--bg) 0%,
+    var(--bg) 58%,
+    rgba(226, 97, 29, 0.1) 58%,
+    rgba(226, 97, 29, 0.1) 100%
+  );
+}

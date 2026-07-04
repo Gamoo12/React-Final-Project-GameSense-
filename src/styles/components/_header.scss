@@ -1,0 +1,176 @@
+@use '../abstracts' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  background-color: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px var(--shadow);
+  transition: background-color $transition-base;
+
+  &__inner {
+    @include flex-between;
+    height: 64px;
+    gap: $space-md;
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    white-space: nowrap;
+  }
+
+  &__logo-accent {
+    color: $color-accent;
+  }
+
+  // Mobile-first: nav is a slide-down panel
+  &__nav {
+    position: fixed;
+    inset: 64px 0 0 0;
+    background-color: var(--bg-elevated);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: $space-xl;
+    gap: $space-lg;
+    transform: translateX(100%);
+    transition: transform $transition-base;
+
+    &--open {
+      transform: translateX(0);
+    }
+
+    @include respond-md {
+      position: static;
+      flex-direction: row;
+      padding-top: 0;
+      gap: $space-lg;
+      transform: none;
+      background: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    transition: color $transition-fast;
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+
+    @include respond-md {
+      font-size: 0.95rem;
+    }
+
+    &:hover {
+      color: var(--text);
+    }
+
+    &--active {
+      color: $color-accent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $color-accent;
+      }
+    }
+  }
+
+  &__badge {
+    @include flex-center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: $radius-pill;
+    background-color: $color-accent;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    animation: pulse 0.4s ease;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+  }
+
+  &__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+
+    span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: var(--text);
+      border-radius: 2px;
+      transition: transform $transition-base, opacity $transition-base;
+    }
+
+    &--open {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    @include respond-md {
+      display: none;
+    }
+  }
+}
+
+.theme-toggle,
+.lang-switcher {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-sm;
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: border-color $transition-fast, transform $transition-fast;
+
+  &:hover {
+    border-color: $color-accent;
+    transform: translateY(-2px);
+  }
+}
+
+.lang-switcher {
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+.theme-toggle__icon--spin {
+  display: inline-block;
+  animation: scaleIn 0.3s ease;
+}

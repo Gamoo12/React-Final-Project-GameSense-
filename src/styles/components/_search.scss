@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+
+  &__icon {
+    position: absolute;
+    left: 14px;
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.65rem 2.6rem 0.65rem 2.6rem;
+    border-radius: $radius-sm;
+    border: 2px solid var(--border);
+    background-color: var(--bg-elevated);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color $transition-fast;
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+    }
+  }
+
+  &__clear {
+    @include flex-center;
+    position: absolute;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: var(--text-muted);
+    transition: color $transition-fast, background-color $transition-fast;
+
+    &:hover {
+      color: var(--text);
+      background-color: var(--bg);
+    }
+  }
+}

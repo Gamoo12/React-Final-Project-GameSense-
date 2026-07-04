@@ -1,0 +1,22 @@
+// ============================
+// Game Sense — main stylesheet
+// SCSS architecture: abstracts / base / components / pages
+// ============================
+
+@use 'base/reset';
+@use 'base/themes';
+@use 'base/animations';
+
+@use 'components/buttons';
+@use 'components/header';
+@use 'components/footer';
+@use 'components/card';
+@use 'components/modal';
+@use 'components/loader';
+@use 'components/search';
+
+@use 'pages/home';
+@use 'pages/games';
+@use 'pages/details';
+@use 'pages/backlog';
+@use 'pages/notfound';

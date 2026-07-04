@@ -1,0 +1,110 @@
+@use '../abstracts' as *;
+
+.modal {
+  @include flex-center;
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  background-color: var(--overlay);
+  padding: $space-md;
+  animation: fadeIn 0.25s ease both;
+
+  &__content {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: $radius-lg;
+    padding: $space-xl $space-lg $space-lg;
+    box-shadow: 0 24px 60px var(--shadow);
+    animation: scaleIn 0.3s ease both;
+  }
+
+  &__close {
+    @include flex-center;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+    transition: transform $transition-fast, color $transition-fast;
+
+    &:hover {
+      transform: rotate(90deg);
+      color: $color-accent;
+    }
+  }
+}
+
+.quick-view {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+
+  @include respond-sm {
+    flex-direction: row;
+  }
+
+  &__cover {
+    width: 220px;
+    border-radius: $radius-md;
+    align-self: center;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    @include respond-sm {
+      align-self: flex-start;
+      flex-shrink: 0;
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    margin-bottom: $space-xs;
+  }
+
+  &__meta {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-bottom: $space-xs;
+  }
+
+  &__summary {
+    font-size: 0.92rem;
+    margin-bottom: $space-lg;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+  }
+}
+
+.confirm {
+  text-align: center;
+
+  &__title {
+    font-size: 1.3rem;
+    margin-bottom: $space-md;
+  }
+
+  &__text {
+    color: var(--text-muted);
+    margin-bottom: $space-lg;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: $space-sm;
+  }
+}

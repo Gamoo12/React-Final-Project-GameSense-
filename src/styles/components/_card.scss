@@ -1,0 +1,126 @@
+@use '../abstracts' as *;
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-md;
+
+  @include respond-sm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond-md {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-lg;
+  }
+
+  @include respond-lg {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__item {
+    animation: fadeInUp 0.5s ease both;
+  }
+}
+
+.game-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: $radius-md;
+  overflow: hidden;
+  transition: border-color $transition-base;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: $color-accent;
+
+    .game-card__overlay {
+      opacity: 1;
+    }
+
+    .game-card__cover {
+      transform: scale(1.06);
+    }
+  }
+
+  &__cover-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  &__cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+
+  &__overlay {
+    @include flex-center;
+    position: absolute;
+    inset: 0;
+    background-color: var(--overlay);
+    opacity: 0;
+    transition: opacity $transition-base;
+  }
+
+  &__year {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3rem 0.75rem 0.25rem 0.6rem;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    background-color: $color-accent;
+    color: #fff;
+    font-family: $font-display;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  &__backlog {
+    @include flex-center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: transform $transition-fast, background-color $transition-fast;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    &--active {
+      background-color: $color-accent;
+      animation: pulse 0.35s ease;
+    }
+  }
+
+  &__body {
+    padding: $space-sm $space-md $space-md;
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 0.95rem;
+    @include line-clamp(1);
+
+    a:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__genres {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    @include line-clamp(1);
+  }
+}
