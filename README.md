@@ -1,14 +1,14 @@
-#  Game Sense
+# Game Sense
 
 **Game Sense** — რეაქტზე აგებული რესპონსივი ვებ აპლიკაცია, სადაც შეგიძლია აღმოაჩინო უფასო (free-to-play) ვიდეო თამაშები და შექმნა შენი პირადი სია რას ითამაშებ შემდეგ. დაათვალიერე ასობით PC და ბრაუზერული თამაში FreeToGame-ის კატალოგიდან, გაფილტრე ჟანრით, ნახე სრული დეტალები — სისტემური მოთხოვნები და სქრინშოთები — და დაამატე თამაშები შენს სიაში, რომლის ჟანრული განაწილებაც გრაფიკზეც კი გამოისახება.
 
 
 
-🔗 **Live საიტი:** [gameesense.netlify.app](https://gameesense.netlify.app/)
+ **Live საიტი:** [gameesense.netlify.app](https://gameesense.netlify.app/)
 
 ---
 
-##  ფუნქციონალი
+## ფუნქციონალი
 
 -  **5 გვერდი** — მთავარი, თამაშები, თამაშის დეტალები, ჩემი სია, 404 (React Router)
 -  **ცოცხალი ძებნა** დებაუნსით (500ms), ჟანრით ფილტრაციასთან და დახარისხებასთან ერთად (პოპულარობით / სახელით / გამოშვების თარიღით)
@@ -24,7 +24,7 @@
 -  **ანიმაციები** — გვერდების გადასვლა, ბარათების თანმიმდევრული გამოჩენა, hover ეფექტები, ანიმირებული მოდალები, სპინერი (და პატივს სცემს `prefers-reduced-motion`-ს)
 -  **Route-level code splitting** — `React.lazy` + `Suspense`
 
-## 🛠 გამოყენებული ტექნოლოგიები
+## გამოყენებული ტექნოლოგიები
 
 | ტექნოლოგია | დანიშნულება |
 |---|---|
@@ -43,7 +43,25 @@
 - **Context API:** `ThemeContext`, `LanguageContext`, `BacklogContext`
 - **React Portals** მოდალებისთვის, **`React.lazy` / `Suspense`** code splitting-ისთვის, **`memo`** რენდერის ოპტიმიზაციისთვის
 
-## 📸 სქრინშოთები
+## გაშვების ინსტრუქცია
+
+\`\`\`bash
+# 1. დააკლონირე რეპოზიტორია
+git clone https://github.com/Gamoo12/React-Final-Project-GameSense-.git
+cd React-Final-Project-GameSense-
+
+# 2. დააინსტალირე დამოკიდებულებები
+npm install
+
+# 3. გაუშვი dev სერვერი (API გასაღები არ სჭირდება)
+npm run dev
+# → გახსენი http://localhost:5173
+
+# 4. საბოლოო build (შედეგი /dist ფოლდერში)
+npm run build
+\`\`\`
+
+## სქრინშოთები
 
 | მთავარი (მუქი) | მთავარი (ღია) |
 |---|---|
@@ -57,7 +75,7 @@
 |---|---|---|
 | ![Modal](./screenshots/modal.png) | ![Backlog](./screenshots/backlog.png) | ![Mobile](./screenshots/mobile.png) |
 
-##  პროექტის სტრუქტურა
+## პროექტის სტრუქტურა
 
 ```
 game-sense/
