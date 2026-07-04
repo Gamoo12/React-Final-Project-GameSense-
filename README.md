@@ -4,7 +4,7 @@
 
 
 
- **Live საიტი:** _[ლინკი დაემატება დეპლოის შემდეგ]_
+🔗 **Live საიტი:** [gameesense.netlify.app](https://gameesense.netlify.app/)
 
 ---
 
@@ -43,6 +43,19 @@
 - **Context API:** `ThemeContext`, `LanguageContext`, `BacklogContext`
 - **React Portals** მოდალებისთვის, **`React.lazy` / `Suspense`** code splitting-ისთვის, **`memo`** რენდერის ოპტიმიზაციისთვის
 
+## 📸 სქრინშოთები
+
+| მთავარი (მუქი) | მთავარი (ღია) |
+|---|---|
+| ![Home dark](./screenshots/home-dark.png) | ![Home light](./screenshots/home-light.png) |
+
+| თამაშები + ძებნა | თამაშის დეტალები |
+|---|---|
+| ![Games](./screenshots/games.png) | ![Details](./screenshots/details.png) |
+
+| სწრაფი ნახვა | ჩემი სია + გრაფიკი | მობილური |
+|---|---|---|
+| ![Modal](./screenshots/modal.png) | ![Backlog](./screenshots/backlog.png) | ![Mobile](./screenshots/mobile.png) |
 
 ##  პროექტის სტრუქტურა
 
